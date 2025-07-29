@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>View Student Info</h3>
+<form method="post">
+  <div class="mb-3">
+    <label>Roll Number</label>
+    <input type="text" name="roll" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-info">Search</button>
+</form>
+
+{% if student %}
+  <div class="mt-4 card">
+    <div class="card-body">
+      <h5 class="card-title">{{ student["Name"] }} ({{ student["Roll Number"] }})</h5>
+      <ul class="list-group list-group-flush">
+        {% for subject, grade in student["Grades"].items() %}
+          <li class="list-group-item">{{ subject }}: {{ grade }}</li>
+        {% endfor %}
+      </ul>
+      <p class="mt-3">Average Grade: <strong>{{ student["Average"] }}</strong></p>
+    </div>
+  </div>
+{% endif %}
+
+<a href="{{ url_for('index') }}" class="btn btn-link mt-3">← Back</a>
+{% endblock %}

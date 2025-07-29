@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-grid gap-3 col-6 mx-auto text-center">
+  <a href="{{ url_for('add_student') }}" class="btn btn-primary btn-lg">
+    <i class="fa fa-user-plus"></i> Add Student
+  </a>
+  <a href="{{ url_for('add_grade') }}" class="btn btn-warning btn-lg">
+    <i class="fa fa-pen"></i> Add Grade
+  </a>
+  <a href="{{ url_for('student_info') }}" class="btn btn-success btn-lg">
+    <i class="fa fa-user-graduate"></i> View Student Info
+  </a>
+</div>
+{% endblock %}

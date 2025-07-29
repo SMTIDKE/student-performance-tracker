@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Add Grade</h3>
+<form method="post">
+  <div class="mb-3">
+    <label>Roll Number</label>
+    <input type="text" name="roll" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label>Subject</label>
+    <input type="text" name="subject" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label>Grade</label>
+    <input type="number" name="grade" class="form-control" required min="0" max="100">
+  </div>
+  <button type="submit" class="btn btn-success">Add Grade</button>
+</form>
+<a href="{{ url_for('index') }}" class="btn btn-link mt-3">← Back</a>
+{% endblock %}
